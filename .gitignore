@@ -6,7 +6,9 @@
 
 # Ignore bundler config.
 /.bundle
-
+/.github
+/.kamal
+/.vscode
 # Ignore all environment files.
 /.env*
 
