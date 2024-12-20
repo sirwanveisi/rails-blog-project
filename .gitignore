@@ -11,7 +11,7 @@
 /.vscode
 # Ignore all environment files.
 /.env*
-
+/.idea
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
