@@ -1,0 +1,12 @@
+<h2>Edit category: <%= @category.name %></h2>
+
+<%= form_with model: @category, url: category_path(@category), method: :patch, class: 'form-group' do |form| %>
+  <div class="mb-10">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<h2>Category List</h2>
+<a href="<%= new_category_path %>" type="button" class="btn btn-primary">Create</a>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Row</th>
+    <th scope="col">Category name</th>
+    <th scope="col">Create date</th>
+    <th scope="col">Edit/Delete</th>
+  </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  <% @categories.each do |category| %>
+    <tr>
+      <th scope="row"><%= category.id %></th>
+      <td><%= category.name %></td>
+      <td><%= category.created_at %></td>
+      <td>
+        <%= link_to "Edit", edit_category_path(category.id), class: 'btn btn-warning' %>
+        <%= button_to "Delete", category_path(category.id), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

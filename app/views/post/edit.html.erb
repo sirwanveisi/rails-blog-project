@@ -1,0 +1,24 @@
+<h2>Edit post: <%= @post.title %></h2>
+
+<%= form_with model: @post, url: post_path(@post), method: :patch, class: 'form-group' do |form| %>
+  <div class="mb-10">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="mb-10">
+    <%= form.label :body %>
+    <%= form.textarea :body, class: 'form-control' %>
+  </div>
+  <div class="mb-10">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, @categories, :id, :name, prompt: true, class: 'form-control' %>
+  </div>
+  <div class="mb-10">
+    <%= form.label :liked %>
+    <%= form.check_box :liked %>
+  </div>
+
+  <div>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
